@@ -46,7 +46,7 @@ ports:
 # above. 
 ingressGateway:
   name: default/istio-gateway
-  host: "lvh.me" # resolves to 127.0.0.1
+  host: "localhost" # resolves to 127.0.0.1
   matchPrefix: 
     - "/productpage"
     - "/static"
@@ -57,11 +57,9 @@ ingressGateway:
 # Resource settings (use Kubernetes syntax)
 resources:
   requests:
-    memory: "32Mi"
-    cpu: "200m"
-  limits:
-    memory: "64Mi"
-    cpu: "250M"
+    memory: "16Mi"  # Reduzido para minimizar o consumo
+    cpu: "100m"     # Reduzido para minimizar o consumo
+
 
 # Probe settings (use Kubernetes syntax)
 probes:
